@@ -1,8 +1,8 @@
-const products = [{
-        id = 0;
-        name = 1;
+// const products = [{
+//         id = 0;
+//         name = 1;
 
-    }
+//     }
 
 
-]
+// ]

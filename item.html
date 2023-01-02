@@ -119,6 +119,15 @@
         .rating h1 {
             font-size: 5rem;
         }
+        
+        @media (max-width: 1322px) {
+            .ratingBox {
+                flex-direction: column;
+            }
+            .rating {
+                padding: 0;
+            }
+        }
     </style>
 
 
@@ -184,12 +193,12 @@
 
 
     <!-- ----------------------------item start-------------------------------------- -->
-    <section class="Item">
-        <div class="itemImage">
-            <img src="images/men-1.jpg" alt="">
-            <img src="images/men-2.jpg" alt="">
-            <img src="images/men-3.jpg" alt="">
-            <img src="images/men-4.jpg" alt="">
+    <section class="Item container-fluid">
+        <div class="itemImage ">
+            <img src="images/men-2.jpg" alt="" class="">
+            <img src="images/men-1.jpg" alt="" class="">
+            <img src="images/men-3.jpg" alt="" class="">
+            <img src="images/men-4.jpg" alt="" class="">
         </div>
 
         <div class="itemDetails">
@@ -281,15 +290,15 @@
             <!-- ++++++++ Ratings +++++ -->
             <div class="itemRatings">
                 <h3 class="pd-2 "> RATINGS <i class="fa-solid fa-star-shooting "></i></h3>
-                <div class="ratingBox d-flex d-flex ">
-                    <div class="rating pe-5 border-end d-flex align-items-start flex-column">
+                <div class="ratingBox d-flex  ">
+                    <div class="rating pe-5 pe-sm-0 border-end d-flex align-items-start flex-column">
 
                         <h1 class="fw-lighter m-0">4.1<i class="fa-solid fa-star  align-baseline text-success" style="font-size: 2rem;"></i></h1>
 
                         <p class="mt-auto ">4.3k Verified Buyers</p>
                     </div>
 
-                    <ul class="ratings mx-3 d-flex flex-column">
+                    <ul class="ratings mx-3 mx-sm-0 d-flex flex-column pl-sm-0">
                         <li class="text-secondary fw-lighter">5
                             <i class="fa-solid fa-star fa-2xs"></i>
 
