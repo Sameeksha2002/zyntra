@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Document</title>
     <script defer src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -38,8 +38,8 @@
         .Item {
             margin: 5rem 1rem;
             /* padding: 0rem 7rem; */
-            display: flex;
-            flex-direction: row;
+            /* display: flex;
+            flex-direction: row; */
             width: 95%;
         }
         
@@ -48,23 +48,23 @@
         }
         
         .itemImage {
-            width: 60%;
-            display: flex;
+            /* width: 60%; */
+            /* display: flex; */
             flex-wrap: wrap;
-            justify-content: center;
+            /* justify-content: center; */
         }
         
         .itemImage img {
             height: 30rem;
+            /* width: 30vh; */
             margin-right: 1rem;
         }
         
         .itemImage img :hover {}
-        
-        .itemDetails {
+        /* .itemDetails {
             margin-left: 3rem;
             width: 40%;
-        }
+        } */
         
         .itemSizes h3,
         .deliveryOptions h3,
@@ -193,15 +193,15 @@
 
 
     <!-- ----------------------------item start-------------------------------------- -->
-    <section class="Item container-fluid">
-        <div class="itemImage ">
-            <img src="images/men-2.jpg" alt="" class="">
-            <img src="images/men-1.jpg" alt="" class="">
-            <img src="images/men-3.jpg" alt="" class="">
-            <img src="images/men-4.jpg" alt="" class="">
+    <section class="Item container-fluid d-flex flex-md-row flex-column  ">
+        <div class="itemImage d-flex justify-content-center w-md-60 w-100 ">
+            <img src="images/men-2.jpg" alt="" class="w-10  m-1">
+            <img src="images/men-1.jpg" alt="" class="w-10 m-1">
+            <img src="images/men-3.jpg" alt="" class="d-none d-md-block">
+            <img src="images/men-4.jpg" alt="" class="d-none d-md-block">
         </div>
 
-        <div class="itemDetails">
+        <div class="itemDetails w-md-40 ms-md-5 mt-5 w-100 ms-2">
             <!-- ++++++  Item Name ++++++ -->
             <div class="itemNameBox">
                 <h2 class="itemName ">Allen Cooper</h2>
@@ -386,7 +386,7 @@
                     <!-- Grid column -->
 
                     <!-- Grid column -->
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 d-none d-md-block">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4">
                             Categories
@@ -407,7 +407,7 @@
                     <!-- Grid column -->
 
                     <!-- Grid column -->
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 d-none d-md-block">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4">
                             Useful links
