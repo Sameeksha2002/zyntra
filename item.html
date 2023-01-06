@@ -14,6 +14,8 @@
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"> -->
     <script src="images/https://kit.fontawesome.com/6408690262.js" crossorigin="anonymous"></script>
     <!-- <script src="images/https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+    <!-- <script src="cart.js"></script> -->
+
 
     <style>
         body {
@@ -134,7 +136,7 @@
 
 </head>
 
-<body>
+<body onload="setDatas()">
     <!-- -----------------------------navbar start--------------------------------- -->
 
     <nav class="navbar navbar-expand-lg bg-light my-0 z-index-1">
@@ -195,16 +197,16 @@
     <!-- ----------------------------item start-------------------------------------- -->
     <section class="Item container-fluid d-flex flex-md-row flex-column  ">
         <div class="itemImage d-flex justify-content-center w-md-60 w-100 ">
-            <img src="images/men-2.jpg" alt="" class="w-10  m-1">
-            <img src="images/men-1.jpg" alt="" class="w-10 m-1">
-            <img src="images/men-3.jpg" alt="" class="d-none d-md-block">
-            <img src="images/men-4.jpg" alt="" class="d-none d-md-block">
+            <img src="images/men-2.jpg" alt="" class="w-10  m-1 mainImage">
+            <img src="images/men-1.jpg" alt="" class="w-10 m-1 d-none d-md-block mainImage">
+            <img src="images/men-3.jpg" alt="" class="d-none d-md-block mainImage">
+            <img src="images/men-4.jpg" alt="" class="d-none d-md-block mainImage">
         </div>
 
         <div class="itemDetails w-md-40 ms-md-5 mt-5 w-100 ms-2">
             <!-- ++++++  Item Name ++++++ -->
             <div class="itemNameBox">
-                <h2 class="itemName ">Allen Cooper</h2>
+                <h2 class="itemName " id="nameItem">Allen Cooper</h2>
                 <h4 class="itemAbout text-secondary fw-lighter mb-0 pd-0">Fine warm up leather jacket</h4>
 
             </div>
@@ -213,7 +215,7 @@
 
             <!-- +++++ Price and Size ++++++ -->
             <div class="PriceSize">
-                <h3 class="itemPrice ">&#x20B9 300</h3>
+                <h3 class="itemPrice">&#x20B9 <span id="price">300</span> </h3>
                 <p class="text-success ">Inclusive of all taxes</p>
 
                 <br>
@@ -496,6 +498,30 @@
 
         function cart() {
             location.href = "cart.html";
+        }
+
+        function setDatas() {
+            let itemName = document.getElementById('nameItem');
+            let itemPrice = document.getElementById('price');
+            // let itemImage = document.getElementById('mainImage');
+            let itemImage = document.querySelectorAll('.mainImage')
+
+
+            var title2 = sessionStorage.getItem("title");
+            var price2 = sessionStorage.getItem("priceItem");
+            var image2 = sessionStorage.getItem("imgSrc");
+            console.log(image2);
+            itemName.textContent = title2;
+            itemPrice.textContent = price2;
+            itemImage.forEach(element => {
+                element.src = image2;
+            });
+
+            // itemPrice.textContent = "4500";
+            // console.log(title2);
+            // console.log(price2);
+            // console.log(itemPrice.textContent);
+
         }
     </script>
 </body>

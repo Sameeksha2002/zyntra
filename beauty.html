@@ -26,38 +26,7 @@
         }
     </style>
 
-    <script>
-        function AddedBag(x) {
-            // console.log(x.textContent);
-            if (x.textContent == "ADD TO BAG") {
-                x.textContent = "ADDED TO BAG";
-            } else {
-                x.textContent = "ADD TO BAG";
-            }
-        }
 
-        function colChange(i) {
-            const a = document.querySelectorAll(".AddBag");
-            a[i].style.color = "white";
-            a[i].style.backgroundColor = "#b56576";
-            a[i].style.transition = "0.5s linear";
-        }
-
-        function defaultCol(i) {
-            let a = document.querySelectorAll(".AddBag");
-            a[i].style.color = "#b56576";
-            a[i].style.backgroundColor = "white";
-            a[i].style.transition = "0.5s linear";
-        }
-
-        function login() {
-            location.href = "login.html";
-        }
-
-        function cart() {
-            location.href = "cart.html";
-        }
-    </script>
 </head>
 
 <body>
@@ -123,42 +92,42 @@
     </div>
     <section class="cards">
         <div class="card m-3 hover-zoomin" style="width: 18rem;" onmousemove="colChange(0)" onmouseout="defaultCol(0)">
-            <a href="">
-                <img src="images/beauty-1.jpg" class="card-img-top" alt="...">
+            <a onclick="getDatas(0)">
+                <img src="images/beauty-1.jpg" class="card-img-top itemImg" alt="...">
             </a>
             <div class="card-body">
                 <p class="card-text text-center">MORPHE Jaclyn Hill Palette Volume II</p>
-                <p class="text-center my-0">MRP: <strike class="text-secondary">&#x20B9 5500</strike> &#x20B9 3500 | <span class="text-success">40% off</span> </p>
+                <p class="text-center my-0">MRP: <strike class="text-secondary">&#x20B9 5500</strike> &#x20B9 <span class="actual_prize">3500</span> | <span class="text-success">40% off</span> </p>
             </div>
             <p class="text-center my-0 AddBag" onclick="AddedBag(this)">ADD TO BAG</p>
         </div>
         <div class="card m-3 hover-zoomin" style="width: 18rem;" onmousemove="colChange(1)" onmouseout="defaultCol(1)">
-            <a href="">
-                <img src="images/beauty-2.jpg" class="card-img-top" alt="...">
+            <a onclick="getDatas(1)">
+                <img src="images/beauty-2.jpg" class="card-img-top itemImg" alt="...">
             </a>
             <div class="card-body">
                 <p class="card-text text-center">Maybelline New York Liquid Matte Lipstick</p>
-                <p class="text-center my-0">MRP: <strike class="text-secondary">&#x20B9 500</strike> &#x20B9 350 | <span class="text-success">30% off</span> </p>
+                <p class="text-center my-0">MRP: <strike class="text-secondary">&#x20B9 500</strike> &#x20B9 <span class="actual_prize">350</span> | <span class="text-success">30% off</span> </p>
             </div>
             <p class="text-center my-0  AddBag" onclick="AddedBag(this)">ADD TO BAG</p>
         </div>
         <div class="card m-3 hover-zoomin" style="width: 18rem;" onmousemove="colChange(2)" onmouseout="defaultCol(2)">
-            <a href="">
-                <img src="images/beauty-3.jpg" class="card-img-top" alt="...">
+            <a onclick="getDatas(2)">
+                <img src="images/beauty-3.jpg" class="card-img-top itemImg" alt="...">
             </a>
             <div class="card-body">
                 <p class="card-text text-center">Maybelline New York Pout And Glow Kit</p>
-                <p class="text-center my-0">MRP: <strike class="text-secondary">&#x20B9 2500</strike> &#x20B9 950 | <span class="text-success">65% off</span> </p>
+                <p class="text-center my-0">MRP: <strike class="text-secondary">&#x20B9 2500</strike> &#x20B9 <span class="actual_prize">950</span> | <span class="text-success">65% off</span> </p>
             </div>
             <p class="text-center my-0  AddBag" onclick="AddedBag(this)">ADD TO BAG</p>
         </div>
         <div class="card m-3 hover-zoomin" style="width: 18rem;" onmousemove="colChange(3)" onmouseout="defaultCol(3)">
-            <a href="">
-                <img src="images/beauty-4.jpg" class="card-img-top" alt="...">
+            <a onclick="getDatas(3)">
+                <img src="images/beauty-4.jpg" class="card-img-top itemImg" alt="...">
             </a>
             <div class="card-body">
                 <p class="card-text text-center">Maybelline New York Sky Waterproof Mascara</p>
-                <p class="text-center my-0">MRP: <strike class="text-secondary">&#x20B9 400</strike> &#x20B9 250 | <span class="text-success">25% off</span> </p>
+                <p class="text-center my-0">MRP: <strike class="text-secondary">&#x20B9 400</strike> &#x20B9 <span class="actual_prize">250</span> | <span class="text-success">25% off</span> </p>
             </div>
             <p class="text-center my-0 AddBag" class="AddBag" onclick="AddedBag(this)">ADD TO BAG</p>
 
@@ -323,6 +292,60 @@
     </footer>
     <!-- Footer -->
 
+
+
+    <script>
+        function AddedBag(x) {
+            // console.log(x.textContent);
+            if (x.textContent == "ADD TO BAG") {
+                x.textContent = "ADDED TO BAG";
+            } else {
+                x.textContent = "ADD TO BAG";
+            }
+        }
+
+        function colChange(i) {
+            const a = document.querySelectorAll(".AddBag");
+            a[i].style.color = "white";
+            a[i].style.backgroundColor = "#b56576";
+            a[i].style.transition = "0.5s linear";
+        }
+
+        function defaultCol(i) {
+            let a = document.querySelectorAll(".AddBag");
+            a[i].style.color = "#b56576";
+            a[i].style.backgroundColor = "white";
+            a[i].style.transition = "0.5s linear";
+        }
+
+        function login() {
+            location.href = "login.html";
+        }
+
+        function cart() {
+            location.href = "cart.html";
+        }
+
+        function getDatas(i) {
+
+            let text = document.getElementsByClassName('card-text');
+            let price = document.getElementsByClassName('actual_prize');
+            let image = document.querySelectorAll(".itemImg");
+            // console.log(image[i].src);
+
+
+            let title = text[i].textContent;
+            let itemPrice = price[i].textContent;
+            let imageSrc = image[i].src;
+            // console.log(title);
+            // console.log(itemPrice);
+            // console.log(typeof itemPrice);
+            sessionStorage.setItem("title", title);
+            sessionStorage.setItem("priceItem", itemPrice);
+            sessionStorage.setItem("imgSrc", imageSrc);
+            location.href = "item.html";
+        }
+    </script>
 </body>
 
 </html>
