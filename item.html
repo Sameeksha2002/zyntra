@@ -199,8 +199,8 @@
         <div class="itemImage d-flex justify-content-center w-md-60 w-100 ">
             <img src="images/men-2.jpg" alt="" class="w-10  m-1 mainImage">
             <img src="images/men-1.jpg" alt="" class="w-10 m-1 d-none d-md-block mainImage">
-            <img src="images/men-3.jpg" alt="" class="d-none d-md-block mainImage">
-            <img src="images/men-4.jpg" alt="" class="d-none d-md-block mainImage">
+            <img src="images/men-3.jpg" alt="" class="w-10 m-1 d-none d-md-block mainImage">
+            <img src="images/men-4.jpg" alt="" class="w-10 m-1 d-none d-md-block mainImage">
         </div>
 
         <div class="itemDetails w-md-40 ms-md-5 mt-5 w-100 ms-2">
@@ -231,7 +231,7 @@
                     </ul>
                 </div>
 
-                <p class="text-center my-0 AddBag w-50 fw-bold p-3 " role="button" class="AddBag" onclick="AddedBag(this)">
+                <p class="text-center my-0 AddBag w-50 fw-bold p-3 " role="button" class="AddBag" onclick="dataCart(this)">
                     <i class="fa-solid fa-bag-shopping "></i> <span class="mx-2">ADD TO BAG</span> </p>
             </div>
 
@@ -293,14 +293,14 @@
             <div class="itemRatings">
                 <h3 class="pd-2 "> RATINGS <i class="fa-solid fa-star-shooting "></i></h3>
                 <div class="ratingBox d-flex  ">
-                    <div class="rating pe-5 pe-sm-0 border-end d-flex align-items-start flex-column">
+                    <div class="rating pe-md-5 pe-0 border-end d-flex align-items-start flex-column">
 
                         <h1 class="fw-lighter m-0">4.1<i class="fa-solid fa-star  align-baseline text-success" style="font-size: 2rem;"></i></h1>
 
                         <p class="mt-auto ">4.3k Verified Buyers</p>
                     </div>
 
-                    <ul class="ratings mx-3 mx-sm-0 d-flex flex-column pl-sm-0">
+                    <ul class="ratings mx-md-3 mx-0 d-flex flex-column pl-0">
                         <li class="text-secondary fw-lighter">5
                             <i class="fa-solid fa-star fa-2xs"></i>
 
@@ -336,7 +336,7 @@
     <!-- ----------------------------------------item end---------------------------------------- -->
     <!-- ------------------------footer starts------------------------------- -->
     <!-- Footer -->
-    <footer class="text-center text-lg-start ">
+    <footer class="text-center text-lg-start  ">
         <!-- Section: Social media -->
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             <!-- Left -->
@@ -483,14 +483,15 @@
 
         }
 
-        function AddedBag(x) {
-            // console.log(x.textContent);
-            if (x.textContent == "ADD TO BAG") {
-                x.textContent = "ADDED TO BAG";
-            } else {
-                x.textContent = "ADD TO BAG";
-            }
-        }
+        // function AddedBag(x) {
+        //     // console.log(x.textContent);
+        //     if (x.textContent == "ADD TO BAG") {
+        //         x.textContent = "ADDED TO BAG";
+
+        //     } else {
+        //         x.textContent = "ADD TO BAG";
+        //     }
+        // }
 
         function login() {
             location.href = "login.html";
@@ -504,7 +505,7 @@
             let itemName = document.getElementById('nameItem');
             let itemPrice = document.getElementById('price');
             // let itemImage = document.getElementById('mainImage');
-            let itemImage = document.querySelectorAll('.mainImage')
+            let itemImage = document.querySelectorAll('.mainImage');
 
 
             var title2 = sessionStorage.getItem("title");
@@ -522,6 +523,27 @@
             // console.log(price2);
             // console.log(itemPrice.textContent);
 
+        }
+
+        function dataCart(i) {
+
+            let text = document.getElementById('nameItem');
+            let price = document.getElementById('price');
+            let image = document.querySelectorAll('.mainImage');
+            // let sizes = document.querySelectorAll(".Sizes");
+
+            let title = text.textContent;
+            let itemPrice = price.textContent;
+            let imageSrc = image[0].src;
+
+
+            console.log(title);
+            console.log(itemPrice);
+            console.log(imageSrc);
+            sessionStorage.setItem("title", title);
+            sessionStorage.setItem("priceItem", itemPrice);
+            sessionStorage.setItem("imgSrc", imageSrc);
+            // location.href = "item.html";
         }
     </script>
 </body>

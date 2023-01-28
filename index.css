@@ -46,23 +46,23 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
         }
         
         .events div img {
             width: 45%;
             margin: 1rem;
+            transition: transform 0.3s ease-out, filter 0.3s ease-in-out;
         }
         
         .events div img:hover {
-            width: 48%;
-            /* margin: 0.8rem; */
-            filter: contrast(130%);
-            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-            border-radius: 20px;
-            /* transform: rotate(3deg); */
-            /* transition: all 0.3s ease-in; */
-            transition-duration: 0.3s;
-            transition-timing-function: ease-out;
+            /* width: 48%; */
+            transform: scale(1.03);
+            filter: contrast(110%);
+            /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+            /* border-radius: 20px; */
+            /* transition-duration: 0.3s;
+            transition-timing-function: ease-out; */
         }
         
         .catSection h2 {

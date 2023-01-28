@@ -18,7 +18,7 @@
 </head>
 
 
-<body>
+<body onload="cartItem()">
 
     <!-- -----------------------------navbar start--------------------------------- -->
 
@@ -76,14 +76,44 @@
     </nav>
     <!-- ----------------------------navbar end------------------------------- -->
 
+    <!---------------------------------cart item------------------------>
+    <div class="d-flex mx-auto" style="width: 95%;">
+        <div class="my-md-5 mx-md-auto" style="width: 65%;" id="items">
 
+            <!-- <div class="item my-md-3  rounded-3 d-flex flex-md-row justify-content-between" style="border: 1px solid gray;">
+                <p class=" p-0 m-0 "><img src="images/men-1.jpg" alt="" class=" rounded-start" id="itemImage" style=" width: 100px;"></p>
+                <div class="info d-flex flex-md-column  ps-3 pt-3 m-0 ">
+                    <p id="itemTitle">MORPHE Jaclyn Hill Jacket Volume II</p>
+                    <p id="itemSize">M</p>
+                    <p id="itemQuant"><input type="number" id="quantity" name="quantity" min="1" max="5" placeholder="1"></p>
+                </div>
+                <div class=" px-5 pt-3 m-0 ms-auto d-flex flex-md-column position-relative ">
+                    <p>&#x20B9 <span id="itemPrice">4500</span></p>
+                    <a class=" btn link-danger text-danger px-2 py-1 my-3  position-absolute bottom-0" onclick="deleteItem(this)">delete</a>
+                </div>
+            </div> -->
+
+
+
+        </div>
+        <div class="total rounded-3 my-4" style="width: 30%; background-color: #FAFAFA; border: 1px solid gray;">
+            <p class="h4 ms-3 my-4">Order Details</p>
+            <div class="bill d-flex mx-3 my-0 justify-content-between">
+                <p>Bag total</p>
+                <div>&#x20B9 <span class="totalAmount">4500</span></div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 
 
 
     <!-- ------------------------footer starts------------------------------- -->
-    <!-- Footer -->
-    <footer class="text-center text-lg-start ">
+    <!-- Footer    position-absolute bottom-0 end-0 start-0-->
+    <footer class="text-center text-lg-start">
         <!-- Section: Social media -->
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             <!-- Left -->
@@ -213,6 +243,38 @@
 
         function cart() {
             location.href = "cart.html";
+        }
+
+        function cartItem() {
+            let it = document.getElementById("items");
+            const html = ` <div class="item my-md-3  rounded-3 d-flex flex-md-row justify-content-between" style="border: 1px solid gray;">
+                <p class=" p-0 m-0 "><img src="images/men-1.jpg" alt="" class=" rounded-start" id="itemImage" style=" width: 100px;"></p>
+                <div class="info d-flex flex-md-column  ps-3 pt-3 m-0 ">
+                    <p id="itemTitle">MORPHE Jaclyn Hill Jacket Volume II</p>
+                    <p id="itemSize">M</p>
+                    <p id="itemQuant"><input type="number" id="quantity" name="quantity" min="1" max="5" placeholder="1"></p>
+                </div>
+                <div class=" px-5 pt-3 m-0 ms-auto d-flex flex-md-column position-relative ">
+                    <p>&#x20B9 <span id="itemPrice">4500</span></p>
+                    <a class=" btn link-danger text-danger px-2 py-1 my-3  position-absolute bottom-0" onclick="deleteItem(this)">delete</a>
+                </div>
+            </div>`;
+            it.insertAdjacentHTML("afterbegin", html);
+            let itemName = document.getElementById('itemTitle');
+            let itemPrice = document.getElementById('itemPrice');
+            let itemImage = document.getElementById('itemImage');
+
+            var title2 = sessionStorage.getItem("title");
+            var price2 = sessionStorage.getItem("priceItem");
+            var image2 = sessionStorage.getItem("imgSrc");
+            console.log(title2);
+            console.log(price2);
+            console.log(image2);
+            itemName.textContent = title2;
+            itemPrice.textContent = price2;
+            itemImage.src = image2;
+
+
         }
     </script>
 </body>
